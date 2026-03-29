@@ -1317,15 +1317,16 @@ document.querySelectorAll(".touch-btn").forEach((button) => {
   const action = button.dataset.key;
   const press = (state) => {
     keys[action] = state;
+    button.classList.toggle("is-pressed", state);
   };
-  button.addEventListener("touchstart", (event) => {
+  button.addEventListener("pointerdown", (event) => {
     event.preventDefault();
+    button.setPointerCapture?.(event.pointerId);
     press(true);
-  }, { passive: false });
-  button.addEventListener("touchend", () => press(false));
-  button.addEventListener("mousedown", () => press(true));
-  button.addEventListener("mouseup", () => press(false));
-  button.addEventListener("mouseleave", () => press(false));
+  });
+  button.addEventListener("pointerup", () => press(false));
+  button.addEventListener("pointercancel", () => press(false));
+  button.addEventListener("pointerleave", () => press(false));
 });
 
 ui.startButton.addEventListener("click", () => {

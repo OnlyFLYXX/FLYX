@@ -205,16 +205,51 @@ canvas {
 
 .touch-controls {
   display: none;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: end;
   gap: 12px;
   margin-top: 14px;
-  flex-wrap: wrap;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .touch-btn {
-  min-width: 88px;
-  background: rgba(31, 107, 83, 0.9);
+  min-width: 82px;
+  min-height: 64px;
+  background: linear-gradient(180deg, rgba(31, 107, 83, 0.96), rgba(16, 70, 54, 0.96));
   color: #fff7ed;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 22px rgba(12, 39, 31, 0.22);
+  touch-action: manipulation;
+}
+
+.touch-cluster {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+
+.touch-cluster-move {
+  flex: 1;
+}
+
+.touch-cluster-action {
+  justify-content: end;
+}
+
+.touch-btn-wide {
+  min-width: 96px;
+}
+
+.touch-btn-jump {
+  min-width: 96px;
+  min-height: 78px;
+  font-size: 1.02rem;
+}
+
+.touch-btn.is-pressed {
+  transform: translateY(2px) scale(0.98);
+  background: linear-gradient(180deg, rgba(53, 143, 114, 0.98), rgba(21, 84, 65, 0.98));
 }
 
 body.touch-enabled .touch-controls {
@@ -258,6 +293,23 @@ body.touch-enabled .touch-controls {
 
   .canvas-card {
     padding: 12px;
+  }
+
+  .touch-controls {
+    position: sticky;
+    bottom: 6px;
+    padding-top: 8px;
+  }
+
+  .touch-cluster-move,
+  .touch-cluster-action {
+    gap: 8px;
+  }
+
+  .touch-btn {
+    min-width: 78px;
+    min-height: 60px;
+    padding: 10px 14px;
   }
 
   .overlay {

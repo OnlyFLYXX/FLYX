@@ -60,10 +60,14 @@
       </div>
 
       <div class="touch-controls">
-        <button class="touch-btn" data-key="left">يسار</button>
-        <button class="touch-btn" data-key="down">نزول</button>
-        <button class="touch-btn" data-key="jump">قفز</button>
-        <button class="touch-btn" data-key="right">يمين</button>
+        <div class="touch-cluster touch-cluster-move">
+          <button class="touch-btn touch-btn-wide" data-key="left">يسار</button>
+          <button class="touch-btn touch-btn-wide" data-key="right">يمين</button>
+        </div>
+        <div class="touch-cluster touch-cluster-action">
+          <button class="touch-btn" data-key="down">نزول</button>
+          <button class="touch-btn touch-btn-jump" data-key="jump">قفز</button>
+        </div>
       </div>
     </section>
   </main>
