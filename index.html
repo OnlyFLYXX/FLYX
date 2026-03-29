@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رحلة نُجْم في المغرب</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="hud-card">
+      <div class="title-wrap">
+        <p class="eyebrow">لعبة منصات 2D بطابع مغربي</p>
+        <h1>رحلة نُجْم في المغرب</h1>
+        <p id="storyText" class="story">
+          ساعد نُجْم يستكشف قلعة الملك ويجمع الكنوز من أروقتها وقاعاتها وسراديبها حتى يصل إلى منصة التتويج.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>المرحلة</span>
+          <strong id="levelName">-</strong>
+        </div>
+        <div class="stat">
+          <span>المقتنيات</span>
+          <strong id="collectStatus">0 / 0</strong>
+        </div>
+        <div class="stat">
+          <span>النقاط</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="startButton" class="primary-btn">ابدأ المغامرة</button>
+        <button id="restartButton" class="ghost-btn">أعد المرحلة</button>
+        <button id="skipButton" class="ghost-btn">تخطي المرحلة</button>
+        <button id="audioButton" class="ghost-btn">الصوت: شغال</button>
+      </div>
+
+      <div class="controls-note">
+        <span>التحكم:</span>
+        الأسهم أو <b>W A S D</b> للحركة، و <b>Space</b> أو <b>W</b> للقفز، و <b>S</b> أو السهم السفلي للانحناء.
+      </div>
+    </section>
+
+    <section class="canvas-card">
+      <div class="canvas-topbar">
+        <div id="bannerTitle">جاهز للانطلاق</div>
+        <div id="bannerSubtitle">خمس مراحل داخل قلعة ملكية مليئة بالمصائد والأسرار.</div>
+      </div>
+      <canvas id="gameCanvas" width="960" height="540" aria-label="لعبة رحلة نجم في المغرب"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-box">
+          <h2 id="overlayTitle">رحلة نُجْم في المغرب</h2>
+          <p id="overlayBody">اجمع كل المقتنيات في كل مرحلة ثم ادخل الباب الذهبي للانتقال للمرحلة التالية.</p>
+        </div>
+      </div>
+
+      <div class="touch-controls">
+        <button class="touch-btn" data-key="left">يسار</button>
+        <button class="touch-btn" data-key="down">نزول</button>
+        <button class="touch-btn" data-key="jump">قفز</button>
+        <button class="touch-btn" data-key="right">يمين</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
